@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <!--responsive required-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--bootstrap css-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+    <!--bootstrap js using jquery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+    <style>
+        * {
+            border: 1px solid rgba(0,122,0,.6);
+        }
+
+        .r0 {
+            background: lightpink;
+        }
+        .r1 {
+            background: lightgreen;
+        }
+
+        .row > div {
+            height: 60px;
+            line-height: 60px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container-fluid">
+    
+    <div class="row r0">
+        <div class="col-sm-4">column 00sm</div>
+        <div class="col-sm-4">column 01sm</div>
+        <div class="col-sm-4">column 02sm</div>
+    </div>
+
+    <div class="row r1">
+        <div class="col-lg-4">column 00lg</div>
+        <div class="col-lg-4">column 01lg</div>
+        <div class="col-lg-4">column 02lg</div>
+    </div>
+    
+    <div class="row r2">
+        <div class="col-md-3">column 00md</div>
+        <div class="col-md-9">column 01mdsm</div>
+    </div>
+
+</div>
+
+</body>
+</html>
