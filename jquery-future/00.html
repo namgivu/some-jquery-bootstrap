@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <style>
+        body * {
+            /*border: 1px solid rgba(0,122,0,.6);*/
+        }
+        .container {
+            padding-left: 20%;
+            padding-right: 20%;
+
+            padding-top: 60px;
+            height: 600px;
+        }
+        .btn {
+            display: inline-block;
+        }
+        .tab > div {
+            padding: 12px;
+        }
+        .btn.active {
+            background: pink;
+            font-weight: bold;
+        }
+        .tabHeader {
+            display: inline-block;
+            padding: 6px;
+        }
+        .tabHeader.active {
+            border: 1px solid lightblue;
+            border-bottom: 0px;
+        }
+        .tab.active {
+            display: block;
+        }
+        .tab {
+            display: None;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="tabWrapper">
+            <div class="tabHeaders">
+                <div class="tabHeader active" data-tab-content="tabBump">Bump</div>
+                <div class="tabHeader" data-tab-content="tabNonBump">Non-bump</div>
+                <div class="tabHeader" data-tab-content="tabAbout">About</div>
+            </div>
+
+            <hr>
+
+            <div class="tabContent">
+                <div class="tab tabBump active">
+                    <div class="bump">light</div>
+                    <div class="btn btnOn active">ON</div>
+                    <div class="btn btnOff">OFF</div>
+                </div>
+
+                <div class="tab tabNonBump">
+                    <div>Something not a bump</div>
+                </div>
+
+                <div class="tab tabAbout">
+                    <div>About abbccc 122333</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        /*region bump*/
+        $('.btn').click(function() {
+            $('.btn').toggleClass('active');
+        });
+
+        $('.btnOn').click(function() {
+            $('.bump').text('light');
+        });
+        $('.btnOff').click(function() {
+            $('.bump').text('dark');
+        });
+        /*endregion bump*/
+
+        /*region tab control*/
+        $('.tabHeader').click(function(){
+            /*activate the tab header*/
+            $('.tabHeader').removeClass('active');
+            $(this).addClass('active');
+
+            /*show tab content*/
+            tabContent = $(this).data('tab-content');
+            $('.tab').hide();
+            $('.'+tabContent).show();
+        });
+        /*endregion tab control*/
+    </script>
+</body>
+</html>
